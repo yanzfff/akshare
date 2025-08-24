@@ -28,7 +28,7 @@ def get_version_string() -> str:
 
 
 setuptools.setup(
-    name="akshare",
+    name="aksharefix",
     version=get_version_string(),
     author="AKFamily",
     author_email="albertandking@gmail.com",
@@ -36,7 +36,7 @@ setuptools.setup(
     description="AKShare is an elegant and simple financial data interface library for Python, built for human beings!",
     long_description=long_description,
     long_description_content_type="text/markdown",
-    url="https://github.com/akfamily/akshare",
+    url="https://github.com/yanzfff/akshare",
     packages=setuptools.find_packages(),
     install_requires=[
         "aiohttp>=3.11.13",
