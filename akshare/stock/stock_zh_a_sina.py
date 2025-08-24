@@ -41,6 +41,99 @@ def _get_zh_a_page_count() -> int:
     else:
         return int(page_count) + 1
 
+def stock_zh_a_spot_stream(onErr):
+    """
+    新浪财经-所有 A 股的实时行情数据生成器; 支持逐页迭代处理，避免内存占用过大
+    https://vip.stock.finance.sina.com.cn/mkt/#hs_a
+    :return: 生成器，每次返回一页股票的实时行情数据
+    :rtype: Generator[pandas.DataFrame]
+    """
+    page_count = _get_zh_a_page_count()
+    zh_sina_stock_payload_copy = zh_sina_a_stock_payload.copy()
+    tqdm = get_tqdm()
+    
+    for page in tqdm(
+        range(1, page_count + 1), leave=False, desc="Please wait for a moment"
+    ):
+        zh_sina_stock_payload_copy.update({"page": page})
+        errCount = 0
+        while True:
+            try:
+                r = requests.get(zh_sina_a_stock_url, params=zh_sina_stock_payload_copy)
+                if not r.text.startswith("{"):
+                    raise Exception("not json")
+                data_json = demjson.decode(r.text)
+                break
+            except Exception as e:
+                errCount = errCount + 1
+                onErr(e, errCount)
+                continue
+        page_df = pd.DataFrame(data_json)
+        
+        if not page_df.empty:
+            page_df = page_df.astype(
+                {
+                    "trade": "float",
+                    "pricechange": "float",
+                    "changepercent": "float",
+                    "buy": "float",
+                    "sell": "float",
+                    "settlement": "float",
+                    "open": "float",
+                    "high": "float",
+                    "low": "float",
+                    "volume": "float",
+                    "amount": "float",
+                    "per": "float",
+                    "pb": "float",
+                    "mktcap": "float",
+                    "nmc": "float",
+                    "turnoverratio": "float",
+                }
+            )
+            page_df.columns = [
+                "代码",
+                "_",
+                "名称",
+                "最新价",
+                "涨跌额",
+                "涨跌幅",
+                "买入",
+                "卖出",
+                "昨收",
+                "今开",
+                "最高",
+                "最低",
+                "成交量",
+                "成交额",
+                "时间戳",
+                "_",
+                "_",
+                "_",
+                "_",
+                "_",
+            ]
+            page_df = page_df[
+                [
+                    "代码",
+                    "名称",
+                    "最新价",
+                    "涨跌额",
+                    "涨跌幅",
+                    "买入",
+                    "卖出",
+                    "昨收",
+                    "今开",
+                    "最高",
+                    "最低",
+                    "成交量",
+                    "成交额",
+                    "时间戳",
+                ]
+            ]
+        
+        yield page_df
+
 
 def stock_zh_a_spot() -> pd.DataFrame:
     """
