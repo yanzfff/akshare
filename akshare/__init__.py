@@ -5356,6 +5356,7 @@ from akshare.stock.stock_zh_a_sina import (
     stock_zh_a_daily,
     stock_zh_a_minute,
     stock_zh_a_cdr_daily,
+    stock_zh_a_spot_stream,
 )
 
 """
