@@ -20,7 +20,7 @@ def get_version_string() -> str:
     :return: version number
     :rtype: str, e.g. '0.6.24'
     """
-    with open("akshare/__init__.py", "rb") as _f:
+    with open("aksharefix/__init__.py", "rb") as _f:
         version_line = re.search(
             pattern=r"__version__\s+=\s+(.*)", string=_f.read().decode("utf-8")
         ).group(1)
