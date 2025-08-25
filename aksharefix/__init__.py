@@ -3149,7 +3149,7 @@ amac_manager_cancelled_info # 中国证券投资基金业协会-信息公示-诚
 1.17.40 fix: fix stock_gdfx_free_holding_change_em interface
 """
 
-__version__ = "2.0.1"
+__version__ = "2.0.2"
 __author__ = "AKFamily"
 
 import sys
@@ -3174,41 +3174,41 @@ del sys
 """
 东方财富-A股-财务分析-主要指标
 """
-from akshare.stock_fundamental.stock_finance_sina import stock_financial_analysis_indicator_em
+from aksharefix.stock_fundamental.stock_finance_sina import stock_financial_analysis_indicator_em
 
 """
 期权保证金 
 """
-from akshare.option.option_margin import option_margin, option_margin_symbol
+from aksharefix.option.option_margin import option_margin, option_margin_symbol
 
 """
 东方财富-港股-证券资料
 """
-from akshare.stock.stock_profile_em import stock_hk_company_profile_em, stock_hk_security_profile_em
+from aksharefix.stock.stock_profile_em import stock_hk_company_profile_em, stock_hk_security_profile_em
 
 """
 东方财富网-行情中心-债券市场-质押式回购
 """
-from akshare.bond.bond_buy_back_em import bond_sh_buy_back_em, bond_sz_buy_back_em, bond_buy_back_hist_em
+from aksharefix.bond.bond_buy_back_em import bond_sh_buy_back_em, bond_sz_buy_back_em, bond_buy_back_hist_em
 
 """
 东方财富-A股数据-股本结构
 """
-from akshare.stock_fundamental.stock_gbjg_em import stock_zh_a_gbjg_em
+from aksharefix.stock_fundamental.stock_gbjg_em import stock_zh_a_gbjg_em
 
 """
 异步接口
 """
-from akshare.stock_a.stock_zh_a_spot import stock_zh_a_spot_em as stock_zh_a_spot_em_async
-from akshare.stock_a.stock_individual_fund_flow_rank import (
+from aksharefix.stock_a.stock_zh_a_spot import stock_zh_a_spot_em as stock_zh_a_spot_em_async
+from aksharefix.stock_a.stock_individual_fund_flow_rank import (
     stock_individual_fund_flow_rank as stock_individual_fund_flow_rank_async
 )
-from akshare.stock_a.stock_board_concept_name_em import stock_board_concept_name_em as stock_board_concept_name_em_async
+from aksharefix.stock_a.stock_board_concept_name_em import stock_board_concept_name_em as stock_board_concept_name_em_async
 
 """
 雪球-个股-公司概况-公司简介
 """
-from akshare.stock_fundamental.stock_basic_info_xq import (
+from aksharefix.stock_fundamental.stock_basic_info_xq import (
     stock_individual_basic_info_xq,
     stock_individual_basic_info_hk_xq,
     stock_individual_basic_info_us_xq,
@@ -3217,27 +3217,27 @@ from akshare.stock_fundamental.stock_basic_info_xq import (
 """
 新浪财经-行情中心-环球市场
 """
-from akshare.index.index_global_sina import index_global_hist_sina, index_global_name_table
+from aksharefix.index.index_global_sina import index_global_hist_sina, index_global_name_table
 
 """
 东方财富网-行情中心-全球指数
 """
-from akshare.index.index_global_em import index_global_hist_em, index_global_spot_em
+from aksharefix.index.index_global_em import index_global_hist_em, index_global_spot_em
 
 """
 东方财富网-行情中心-外汇市场-所有汇率
 """
-from akshare.forex.forex_em import forex_hist_em, forex_spot_em
+from aksharefix.forex.forex_em import forex_hist_em, forex_spot_em
 
 """
 东方财富网-行情中心-沪深港通
 """
-from akshare.stock.stock_hsgt_em import stock_zh_ah_spot_em, stock_hsgt_sh_hk_spot_em
+from aksharefix.stock.stock_hsgt_em import stock_zh_ah_spot_em, stock_hsgt_sh_hk_spot_em
 
 """
 东方财富-美股-财务分析-三大报表
 """
-from akshare.stock_fundamental.stock_finance_us_em import (
+from aksharefix.stock_fundamental.stock_finance_us_em import (
     stock_financial_us_report_em,
     stock_financial_us_analysis_indicator_em,
 )
@@ -3245,42 +3245,42 @@ from akshare.stock_fundamental.stock_finance_us_em import (
 """
 期货行情-内盘-历史行情数据-东财
 """
-from akshare.futures.futures_hist_em import futures_hist_table_em, futures_hist_em
+from aksharefix.futures.futures_hist_em import futures_hist_table_em, futures_hist_em
 
 """
 巨潮资讯-数据中心-专题统计-股东股本-股本变动
 """
-from akshare.stock.stock_hold_control_cninfo import stock_hold_change_cninfo
+from aksharefix.stock.stock_hold_control_cninfo import stock_hold_change_cninfo
 
 """
 基金费率
 """
-from akshare.fund.fund_fee_em import fund_fee_em
+from aksharefix.fund.fund_fee_em import fund_fee_em
 
 """
 东方财富网-数据中心-估值分析-每日互动-每日互动-估值分析
 """
-from akshare.stock_feature.stock_value_em import stock_value_em
+from aksharefix.stock_feature.stock_value_em import stock_value_em
 
 """
 已实现波动率
 """
-from akshare.cal.rv import volatility_yz_rv, rv_from_futures_zh_minute_sina, rv_from_stock_zh_a_hist_min_em
+from aksharefix.cal.rv import volatility_yz_rv, rv_from_futures_zh_minute_sina, rv_from_stock_zh_a_hist_min_em
 
 """
 QDII
 """
-from akshare.qdii.qdii_jsl import qdii_a_index_jsl, qdii_e_index_jsl, qdii_e_comm_jsl
+from aksharefix.qdii.qdii_jsl import qdii_a_index_jsl, qdii_e_index_jsl, qdii_e_comm_jsl
 
 """
 财新网-财新数据通
 """
-from akshare.stock.stock_news_cx import stock_news_main_cx
+from aksharefix.stock.stock_news_cx import stock_news_main_cx
 
 """
 搜猪-生猪大数据-各省均价实时排行榜
 """
-from akshare.spot.spot_hog_soozhu import (
+from aksharefix.spot.spot_hog_soozhu import (
     spot_hog_soozhu,
     spot_hog_year_trend_soozhu,
     spot_hog_lean_price_soozhu,
@@ -3294,62 +3294,62 @@ from akshare.spot.spot_hog_soozhu import (
 """
 知名港股
 """
-from akshare.stock.stock_hk_famous import stock_hk_famous_spot_em
+from aksharefix.stock.stock_hk_famous import stock_hk_famous_spot_em
 
 """
 同花顺-数据中心-宏观数据-股票筹资
 """
-from akshare.economic.macro_finance_ths import macro_stock_finance, macro_rmb_loan, macro_rmb_deposit
+from aksharefix.economic.macro_finance_ths import macro_stock_finance, macro_rmb_loan, macro_rmb_deposit
 
 """
 富途牛牛-主题投资-概念板块-成分股
 """
-from akshare.stock_feature.stock_concept_futu import stock_concept_cons_futu
+from aksharefix.stock_feature.stock_concept_futu import stock_concept_cons_futu
 
 """
 商品期权手续费
 """
-from akshare.option.option_comm_qihuo import option_comm_info, option_comm_symbol
+from aksharefix.option.option_comm_qihuo import option_comm_info, option_comm_symbol
 
 """
 上海证券交易所-产品-股票期权-每日统计
 """
-from akshare.option.option_daily_stats_sse_szse import option_daily_stats_sse, option_daily_stats_szse
+from aksharefix.option.option_daily_stats_sse_szse import option_daily_stats_sse, option_daily_stats_szse
 
 """
 同花顺理财-基金数据-每日净值-ETF
 """
-from akshare.fund.fund_etf_ths import fund_etf_spot_ths
+from aksharefix.fund.fund_etf_ths import fund_etf_spot_ths
 
 """
 东方财富网-数据中心-融资融券-融资融券账户统计-两融账户信息
 """
-from akshare.stock_feature.stock_margin_em import stock_margin_account_info
+from aksharefix.stock_feature.stock_margin_em import stock_margin_account_info
 
 """
 现货走势
 """
-from akshare.spot.spot_price_qh import spot_price_qh, spot_price_table_qh
+from aksharefix.spot.spot_price_qh import spot_price_qh, spot_price_table_qh
 
 """
 华尔街见闻-日历-宏观
 """
-from akshare.economic.macro_info_ws import macro_info_ws
+from aksharefix.economic.macro_info_ws import macro_info_ws
 
 """
 数库-A股新闻情绪指数
 """
-from akshare.index.index_zh_a_scope import index_news_sentiment_scope
+from aksharefix.index.index_zh_a_scope import index_news_sentiment_scope
 
 """
 申万宏源研究-申万指数-指数发布-基金指数-实时行情
 """
-from akshare.index.index_research_fund_sw import index_hist_fund_sw, index_realtime_fund_sw
+from aksharefix.index.index_research_fund_sw import index_hist_fund_sw, index_realtime_fund_sw
 
 """
 东方财富-财经早餐
 """
-from akshare.stock_feature.stock_info import (
+from aksharefix.stock_feature.stock_info import (
     stock_info_cjzc_em,
     stock_info_global_em,
     stock_info_global_ths,
@@ -3362,44 +3362,44 @@ from akshare.stock_feature.stock_info import (
 """
 期货交易-参数汇总查询
 """
-from akshare.futures_derivative.futures_contract_info_shfe import futures_contract_info_shfe
-from akshare.futures_derivative.futures_contract_info_dce import futures_contract_info_dce
-from akshare.futures_derivative.futures_contract_info_czce import futures_contract_info_czce
-from akshare.futures_derivative.futures_contract_info_gfex import futures_contract_info_gfex
-from akshare.futures_derivative.futures_contract_info_cffex import futures_contract_info_cffex
-from akshare.futures_derivative.futures_contract_info_ine import futures_contract_info_ine
+from aksharefix.futures_derivative.futures_contract_info_shfe import futures_contract_info_shfe
+from aksharefix.futures_derivative.futures_contract_info_dce import futures_contract_info_dce
+from aksharefix.futures_derivative.futures_contract_info_czce import futures_contract_info_czce
+from aksharefix.futures_derivative.futures_contract_info_gfex import futures_contract_info_gfex
+from aksharefix.futures_derivative.futures_contract_info_cffex import futures_contract_info_cffex
+from aksharefix.futures_derivative.futures_contract_info_ine import futures_contract_info_ine
 
 """
 上海期货交易所-指定交割仓库-库存周报
 """
-from akshare.futures.futures_stock_js import futures_stock_shfe_js
+from aksharefix.futures.futures_stock_js import futures_stock_shfe_js
 
 """
 东方财富-数据中心-沪深港通-市场概括-分时数据
 """
-from akshare.stock_feature.stock_hsgt_min_em import stock_hsgt_fund_min_em
+from aksharefix.stock_feature.stock_hsgt_min_em import stock_hsgt_fund_min_em
 
 """
 东方财富网-行情中心-期货市场-国际期货
 """
-from akshare.futures.futures_hf_em import futures_global_spot_em, futures_global_hist_em
+from aksharefix.futures.futures_hf_em import futures_global_spot_em, futures_global_hist_em
 
 """
 雪球行情数据
 """
-from akshare.stock.stock_xq import (
+from aksharefix.stock.stock_xq import (
     stock_individual_spot_xq,
 )
 
 """
 港股盈利预测
 """
-from akshare.stock_fundamental.stock_profit_forecast_hk_etnet import stock_hk_profit_forecast_et
+from aksharefix.stock_fundamental.stock_profit_forecast_hk_etnet import stock_hk_profit_forecast_et
 
 """
 巨潮资讯-首页-公告查询-信息披露
 """
-from akshare.stock_feature.stock_disclosure_cninfo import (
+from aksharefix.stock_feature.stock_disclosure_cninfo import (
     stock_zh_a_disclosure_relation_cninfo,
     stock_zh_a_disclosure_report_cninfo,
 )
@@ -3407,32 +3407,32 @@ from akshare.stock_feature.stock_disclosure_cninfo import (
 """
 东财财富-分时数据
 """
-from akshare.stock.stock_intraday_sina import stock_intraday_sina
+from aksharefix.stock.stock_intraday_sina import stock_intraday_sina
 
 """
 股票日行情
 """
-from akshare.stock_feature.stock_hist_tx import stock_zh_a_hist_tx
+from aksharefix.stock_feature.stock_hist_tx import stock_zh_a_hist_tx
 
 """
 筹码分布
 """
-from akshare.stock_feature.stock_cyq_em import stock_cyq_em
+from aksharefix.stock_feature.stock_cyq_em import stock_cyq_em
 
 """
 东财财富-分时数据
 """
-from akshare.stock.stock_intraday_em import stock_intraday_em
+from aksharefix.stock.stock_intraday_em import stock_intraday_em
 
 """
 美股指数行情
 """
-from akshare.index.index_stock_us_sina import index_us_stock_sina
+from aksharefix.index.index_stock_us_sina import index_us_stock_sina
 
 """
 董监高及相关人员持股变动
 """
-from akshare.stock.stock_share_hold import (
+from aksharefix.stock.stock_share_hold import (
     stock_share_hold_change_bse,
     stock_share_hold_change_sse,
     stock_share_hold_change_szse,
@@ -3441,27 +3441,27 @@ from akshare.stock.stock_share_hold import (
 """
 东方财富网-数据中心-研究报告-个股研报
 """
-from akshare.stock_feature.stock_research_report_em import stock_research_report_em
+from aksharefix.stock_feature.stock_research_report_em import stock_research_report_em
 
 """
 东方财富网-数据中心-重大合同-重大合同明细
 """
-from akshare.stock_feature.stock_zdhtmx_em import stock_zdhtmx_em
+from aksharefix.stock_feature.stock_zdhtmx_em import stock_zdhtmx_em
 
 """
 东方财富网-数据中心-股东大会
 """
-from akshare.stock_feature.stock_gddh_em import stock_gddh_em
+from aksharefix.stock_feature.stock_gddh_em import stock_gddh_em
 
 """
 东方财富网-数据中心-股市日历
 """
-from akshare.stock.stock_gsrl_em import stock_gsrl_gsdt_em
+from aksharefix.stock.stock_gsrl_em import stock_gsrl_gsdt_em
 
 """
 东方财富网-数据中心-特色数据-高管持股
 """
-from akshare.stock.stock_hold_control_em import (
+from aksharefix.stock.stock_hold_control_em import (
     stock_hold_management_detail_em,
     stock_hold_management_person_em,
 )
@@ -3469,17 +3469,17 @@ from akshare.stock.stock_hold_control_em import (
 """
 新浪财经-债券-可转债
 """
-from akshare.bond.bond_cb_sina import bond_cb_profile_sina, bond_cb_summary_sina
+from aksharefix.bond.bond_cb_sina import bond_cb_profile_sina, bond_cb_summary_sina
 
 """
 上证e互动
 """
-from akshare.stock_feature.stock_sns_sseinfo import stock_sns_sseinfo
+from aksharefix.stock_feature.stock_sns_sseinfo import stock_sns_sseinfo
 
 """
 互动易-提问与回答
 """
-from akshare.stock_feature.stock_irm_cninfo import (
+from aksharefix.stock_feature.stock_irm_cninfo import (
     stock_irm_cninfo,
     stock_irm_ans_cninfo,
 )
@@ -3487,12 +3487,12 @@ from akshare.stock_feature.stock_irm_cninfo import (
 """
 基金公告-人事公告
 """
-from akshare.fund.fund_announcement import fund_announcement_personnel_em
+from aksharefix.fund.fund_announcement import fund_announcement_personnel_em
 
 """
 新浪财经-ESG评级中心
 """
-from akshare.stock_feature.stock_esg_sina import (
+from aksharefix.stock_feature.stock_esg_sina import (
     stock_esg_msci_sina,
     stock_esg_rft_sina,
     stock_esg_rate_sina,
@@ -3503,7 +3503,7 @@ from akshare.stock_feature.stock_esg_sina import (
 """
 LOF 行情数据
 """
-from akshare.fund.fund_lof_em import (
+from aksharefix.fund.fund_lof_em import (
     fund_lof_hist_em,
     fund_lof_spot_em,
     fund_lof_hist_min_em,
@@ -3512,7 +3512,7 @@ from akshare.fund.fund_lof_em import (
 """
 同花顺-财务指标-主要指标
 """
-from akshare.stock_fundamental.stock_finance_ths import (
+from aksharefix.stock_fundamental.stock_finance_ths import (
     stock_financial_abstract_ths,
     stock_financial_debt_ths,
     stock_financial_benefit_ths,
@@ -3524,7 +3524,7 @@ from akshare.stock_fundamental.stock_finance_ths import (
 """
 港股股票指数数据-新浪-东财
 """
-from akshare.index.index_stock_hk import (
+from aksharefix.index.index_stock_hk import (
     stock_hk_index_spot_sina,
     stock_hk_index_daily_em,
     stock_hk_index_spot_em,
@@ -3534,44 +3534,44 @@ from akshare.index.index_stock_hk import (
 """
 同花顺-数据中心-可转债
 """
-from akshare.bond.bond_cb_ths import bond_zh_cov_info_ths
+from aksharefix.bond.bond_cb_ths import bond_zh_cov_info_ths
 
 """
 同花顺-港股-分红派息
 """
-from akshare.stock.stock_hk_fhpx_ths import stock_hk_fhpx_detail_ths
+from aksharefix.stock.stock_hk_fhpx_ths import stock_hk_fhpx_detail_ths
 
 """
 同花顺-分红融资
 """
-from akshare.stock_feature.stock_fhps_ths import stock_fhps_detail_ths
+from aksharefix.stock_feature.stock_fhps_ths import stock_fhps_detail_ths
 
 """
 东方财富-行情报价
 """
-from akshare.stock.stock_ask_bid_em import stock_bid_ask_em
+from aksharefix.stock.stock_ask_bid_em import stock_bid_ask_em
 
 """
 同花顺-盈利预测
 """
-from akshare.stock_fundamental.stock_profit_forecast_ths import (
+from aksharefix.stock_fundamental.stock_profit_forecast_ths import (
     stock_profit_forecast_ths,
 )
 
 """
 期货资讯
 """
-from akshare.futures.futures_news_shmet import futures_news_shmet
+from aksharefix.futures.futures_news_shmet import futures_news_shmet
 
 """
 主营介绍
 """
-from akshare.stock_fundamental.stock_zyjs_ths import stock_zyjs_ths
+from aksharefix.stock_fundamental.stock_zyjs_ths import stock_zyjs_ths
 
 """
 东方财富-ETF 行情
 """
-from akshare.fund.fund_etf_em import (
+from aksharefix.fund.fund_etf_em import (
     fund_etf_hist_em,
     fund_etf_hist_min_em,
     fund_etf_spot_em,
@@ -3580,12 +3580,12 @@ from akshare.fund.fund_etf_em import (
 """
 乐咕乐股-股债利差
 """
-from akshare.stock_feature.stock_ebs_lg import stock_ebs_lg
+from aksharefix.stock_feature.stock_ebs_lg import stock_ebs_lg
 
 """
 乐咕乐股-基金仓位
 """
-from akshare.fund.fund_position_lg import (
+from aksharefix.fund.fund_position_lg import (
     fund_stock_position_lg,
     fund_balance_position_lg,
     fund_linghuo_position_lg,
@@ -3594,17 +3594,17 @@ from akshare.fund.fund_position_lg import (
 """
 乐咕乐股-大盘拥挤度
 """
-from akshare.stock_feature.stock_congestion_lg import stock_a_congestion_lg
+from aksharefix.stock_feature.stock_congestion_lg import stock_a_congestion_lg
 
 """
 乐咕乐股-股息率-A 股股息率
 """
-from akshare.stock_feature.stock_gxl_lg import stock_a_gxl_lg, stock_hk_gxl_lg
+from aksharefix.stock_feature.stock_gxl_lg import stock_a_gxl_lg, stock_hk_gxl_lg
 
 """
 东方财富-限售解禁股
 """
-from akshare.stock_fundamental.stock_restricted_em import (
+from aksharefix.stock_fundamental.stock_restricted_em import (
     stock_restricted_release_stockholder_em,
     stock_restricted_release_summary_em,
     stock_restricted_release_detail_em,
@@ -3614,19 +3614,19 @@ from akshare.stock_fundamental.stock_restricted_em import (
 """
 同花顺行业一览表
 """
-from akshare.stock_feature.stock_board_industry_ths import (
+from aksharefix.stock_feature.stock_board_industry_ths import (
     stock_board_industry_summary_ths,
 )
 
 """
 生猪市场价格指数
 """
-from akshare.index.index_hog import index_hog_spot_price
+from aksharefix.index.index_hog import index_hog_spot_price
 
 """
 债券信息查询
 """
-from akshare.bond.bond_info_cm import (
+from aksharefix.bond.bond_info_cm import (
     bond_info_detail_cm,
     bond_info_cm,
     bond_info_cm_query,
@@ -3635,7 +3635,7 @@ from akshare.bond.bond_info_cm import (
 """
 申万宏源研究-指数系列
 """
-from akshare.index.index_research_sw import (
+from aksharefix.index.index_research_sw import (
     index_realtime_sw,
     index_hist_sw,
     index_component_sw,
@@ -3649,7 +3649,7 @@ from akshare.index.index_research_sw import (
 """
 50ETF 期权波动率指数
 """
-from akshare.index.index_option_qvix import (
+from aksharefix.index.index_option_qvix import (
     index_option_50etf_qvix,
     index_option_300etf_min_qvix,
     index_option_300etf_qvix,
@@ -3673,52 +3673,52 @@ from akshare.index.index_option_qvix import (
 """
 百度股市通-外汇-行情榜单
 """
-from akshare.fx.fx_quote_baidu import fx_quote_baidu
+from aksharefix.fx.fx_quote_baidu import fx_quote_baidu
 
 """
 乐估乐股-底部研究-巴菲特指标
 """
-from akshare.stock_feature.stock_buffett_index_lg import stock_buffett_index_lg
+from aksharefix.stock_feature.stock_buffett_index_lg import stock_buffett_index_lg
 
 """
 百度股市通-热搜股票
 """
-from akshare.stock.stock_hot_search_baidu import stock_hot_search_baidu
+from aksharefix.stock.stock_hot_search_baidu import stock_hot_search_baidu
 
 """
 百度股市通- A 股或指数-股评-投票
 """
-from akshare.stock_feature.stock_zh_vote_baidu import stock_zh_vote_baidu
+from aksharefix.stock_feature.stock_zh_vote_baidu import stock_zh_vote_baidu
 
 """
 百度股市通-A 股-财务报表-估值数据
 """
-from akshare.stock_feature.stock_zh_valuation_baidu import stock_zh_valuation_baidu
+from aksharefix.stock_feature.stock_zh_valuation_baidu import stock_zh_valuation_baidu
 
 """
 百度股市通-港股-财务报表-估值数据
 """
-from akshare.stock_feature.stock_hk_valuation_baidu import stock_hk_valuation_baidu
+from aksharefix.stock_feature.stock_hk_valuation_baidu import stock_hk_valuation_baidu
 
 """
 巨潮资讯-个股-公司概况
 """
-from akshare.stock.stock_profile_cninfo import stock_profile_cninfo
+from aksharefix.stock.stock_profile_cninfo import stock_profile_cninfo
 
 """
 巨潮资讯-个股-上市相关
 """
-from akshare.stock.stock_ipo_summary_cninfo import stock_ipo_summary_cninfo
+from aksharefix.stock.stock_ipo_summary_cninfo import stock_ipo_summary_cninfo
 
 """
 巨潮资讯-数据浏览器-筹资指标-公司配股实施方案
 """
-from akshare.stock.stock_allotment_cninfo import stock_allotment_cninfo
+from aksharefix.stock.stock_allotment_cninfo import stock_allotment_cninfo
 
 """
 沪深港股通-参考汇率和结算汇率
 """
-from akshare.stock_feature.stock_hsgt_exchange_rate import (
+from aksharefix.stock_feature.stock_hsgt_exchange_rate import (
     stock_sgt_reference_exchange_rate_sse,
     stock_sgt_settlement_exchange_rate_sse,
     stock_sgt_reference_exchange_rate_szse,
@@ -3728,7 +3728,7 @@ from akshare.stock_feature.stock_hsgt_exchange_rate import (
 """
 中国债券信息网-中债指数-中债指数族系-总指数-综合类指数
 """
-from akshare.bond.bond_cbond import (
+from aksharefix.bond.bond_cbond import (
     bond_new_composite_index_cbond,
     bond_composite_index_cbond,
 )
@@ -3736,27 +3736,27 @@ from akshare.bond.bond_cbond import (
 """
 行业板块
 """
-from akshare.stock_feature.stock_classify_sina import stock_classify_sina
+from aksharefix.stock_feature.stock_classify_sina import stock_classify_sina
 
 """
 主营构成
 """
-from akshare.stock_fundamental.stock_zygc import stock_zygc_em
+from aksharefix.stock_fundamental.stock_zygc import stock_zygc_em
 
 """
 人民币汇率中间价
 """
-from akshare.currency.currency_safe import currency_boc_safe
+from aksharefix.currency.currency_safe import currency_boc_safe
 
 """
 期权-上海证券交易所-风险指标
 """
-from akshare.option.option_risk_indicator_sse import option_risk_indicator_sse
+from aksharefix.option.option_risk_indicator_sse import option_risk_indicator_sse
 
 """
 全球宏观事件
 """
-from akshare.news.news_baidu import (
+from aksharefix.news.news_baidu import (
     news_economic_baidu,
     news_trade_notify_suspend_baidu,
     news_report_time_baidu,
@@ -3766,7 +3766,7 @@ from akshare.news.news_baidu import (
 """
 东方财富-股票-财务分析
 """
-from akshare.stock_feature.stock_three_report_em import (
+from aksharefix.stock_feature.stock_three_report_em import (
     stock_balance_sheet_by_report_em,
     stock_balance_sheet_by_yearly_em,
     stock_profit_sheet_by_report_em,
@@ -3783,12 +3783,12 @@ from akshare.stock_feature.stock_three_report_em import (
 """
 内部交易
 """
-from akshare.stock_feature.stock_inner_trade_xq import stock_inner_trade_xq
+from aksharefix.stock_feature.stock_inner_trade_xq import stock_inner_trade_xq
 
 """
 股票热度-雪球
 """
-from akshare.stock_feature.stock_hot_xq import (
+from aksharefix.stock_feature.stock_hot_xq import (
     stock_hot_deal_xq,
     stock_hot_follow_xq,
     stock_hot_tweet_xq,
@@ -3797,7 +3797,7 @@ from akshare.stock_feature.stock_hot_xq import (
 """
 东方财富-股票数据-龙虎榜
 """
-from akshare.stock_feature.stock_lhb_em import (
+from aksharefix.stock_feature.stock_lhb_em import (
     stock_lhb_hyyyb_em,
     stock_lhb_detail_em,
     stock_lhb_stock_detail_em,
@@ -3813,7 +3813,7 @@ from akshare.stock_feature.stock_lhb_em import (
 """
 指数行情数据
 """
-from akshare.index.index_zh_em import (
+from aksharefix.index.index_zh_em import (
     index_zh_a_hist,
     index_zh_a_hist_min_em,
     index_code_id_map_em,
@@ -3822,7 +3822,7 @@ from akshare.index.index_zh_em import (
 """
 东方财富个股人气榜-A股
 """
-from akshare.stock.stock_hot_rank_em import (
+from aksharefix.stock.stock_hot_rank_em import (
     stock_hot_rank_detail_em,
     stock_hot_rank_em,
     stock_hot_rank_detail_realtime_em,
@@ -3830,12 +3830,12 @@ from akshare.stock.stock_hot_rank_em import (
     stock_hot_keyword_em,
     stock_hot_rank_latest_em,
 )
-from akshare.stock.stock_hot_up_em import stock_hot_up_em
+from aksharefix.stock.stock_hot_up_em import stock_hot_up_em
 
 """
 东方财富个股人气榜-港股
 """
-from akshare.stock.stock_hk_hot_rank_em import (
+from aksharefix.stock.stock_hk_hot_rank_em import (
     stock_hk_hot_rank_detail_em,
     stock_hk_hot_rank_latest_em,
     stock_hk_hot_rank_detail_realtime_em,
@@ -3845,7 +3845,7 @@ from akshare.stock.stock_hk_hot_rank_em import (
 """
 财新指数
 """
-from akshare.index.index_cx import (
+from aksharefix.index.index_cx import (
     index_pmi_com_cx,
     index_pmi_man_cx,
     index_pmi_ser_cx,
@@ -3870,29 +3870,29 @@ from akshare.index.index_cx import (
 """
 期权折溢价分析
 """
-from akshare.option.option_premium_analysis_em import (
+from aksharefix.option.option_premium_analysis_em import (
     option_premium_analysis_em,
 )
 
 """
 期权风险分析
 """
-from akshare.option.option_risk_analysis_em import option_risk_analysis_em
+from aksharefix.option.option_risk_analysis_em import option_risk_analysis_em
 
 """
 期权价值分析
 """
-from akshare.option.option_value_analysis_em import option_value_analysis_em
+from aksharefix.option.option_value_analysis_em import option_value_analysis_em
 
 """
 期权龙虎榜
 """
-from akshare.option.option_lhb_em import option_lhb_em
+from aksharefix.option.option_lhb_em import option_lhb_em
 
 """
 东方财富网-数据中心-股东分析
 """
-from akshare.stock_feature.stock_gdfx_em import (
+from aksharefix.stock_feature.stock_gdfx_em import (
     stock_gdfx_holding_analyse_em,
     stock_gdfx_free_holding_analyse_em,
     stock_gdfx_free_top_10_em,
@@ -3910,7 +3910,7 @@ from akshare.stock_feature.stock_gdfx_em import (
 """
 中国食糖指数
 """
-from akshare.index.index_sugar import (
+from aksharefix.index.index_sugar import (
     index_sugar_msweet,
     index_inner_quote_sugar_msweet,
     index_outer_quote_sugar_msweet,
@@ -3919,12 +3919,12 @@ from akshare.index.index_sugar import (
 """
 东方财富-个股信息
 """
-from akshare.stock.stock_info_em import stock_individual_info_em
+from aksharefix.stock.stock_info_em import stock_individual_info_em
 
 """
 上海黄金交易所-数据资讯-行情走势
 """
-from akshare.spot.spot_sge import (
+from aksharefix.spot.spot_sge import (
     spot_hist_sge,
     spot_symbol_table_sge,
     spot_silver_benchmark_sge,
@@ -3935,12 +3935,12 @@ from akshare.spot.spot_sge import (
 """
 股票回购
 """
-from akshare.stock.stock_repurchase_em import stock_repurchase_em
+from aksharefix.stock.stock_repurchase_em import stock_repurchase_em
 
 """
 东方财富-行业板块
 """
-from akshare.stock.stock_board_industry_em import (
+from aksharefix.stock.stock_board_industry_em import (
     stock_board_industry_cons_em,
     stock_board_industry_hist_em,
     stock_board_industry_hist_min_em,
@@ -3951,7 +3951,7 @@ from akshare.stock.stock_board_industry_em import (
 """
 天天基金网-基金数据-规模变动
 """
-from akshare.fund.fund_scale_em import (
+from aksharefix.fund.fund_scale_em import (
     fund_scale_change_em,
     fund_hold_structure_em,
 )
@@ -3959,12 +3959,12 @@ from akshare.fund.fund_scale_em import (
 """
 天天基金网-基金数据-分红送配
 """
-from akshare.fund.fund_fhsp_em import fund_cf_em, fund_fh_rank_em, fund_fh_em
+from aksharefix.fund.fund_fhsp_em import fund_cf_em, fund_fh_rank_em, fund_fh_em
 
 """
 艺恩-艺人
 """
-from akshare.movie.artist_yien import (
+from aksharefix.movie.artist_yien import (
     online_value_artist,
     business_value_artist,
 )
@@ -3972,12 +3972,12 @@ from akshare.movie.artist_yien import (
 """
 艺恩-视频放映
 """
-from akshare.movie.video_yien import video_variety_show, video_tv
+from aksharefix.movie.video_yien import video_variety_show, video_tv
 
 """
 同花顺-数据中心-技术选股
 """
-from akshare.stock_feature.stock_technology_ths import (
+from aksharefix.stock_feature.stock_technology_ths import (
     stock_rank_cxg_ths,
     stock_rank_cxd_ths,
     stock_rank_lxsz_ths,
@@ -3994,7 +3994,7 @@ from akshare.stock_feature.stock_technology_ths import (
 """
 沪深港通持股
 """
-from akshare.stock_feature.stock_hsgt_em import (
+from aksharefix.stock_feature.stock_hsgt_em import (
     stock_hsgt_individual_em,
     stock_hsgt_individual_detail_em,
     stock_hsgt_fund_flow_summary_em,
@@ -4003,7 +4003,7 @@ from akshare.stock_feature.stock_hsgt_em import (
 """
 基金规模
 """
-from akshare.fund.fund_scale_sina import (
+from aksharefix.fund.fund_scale_sina import (
     fund_scale_open_sina,
     fund_scale_close_sina,
     fund_scale_structured_sina,
@@ -4012,7 +4012,7 @@ from akshare.fund.fund_scale_sina import (
 """
 巨潮资讯-数据中心-专题统计-基金报表
 """
-from akshare.fund.fund_report_cninfo import (
+from aksharefix.fund.fund_report_cninfo import (
     fund_report_stock_cninfo,
     fund_report_industry_allocation_cninfo,
     fund_report_asset_allocation_cninfo,
@@ -4021,7 +4021,7 @@ from akshare.fund.fund_report_cninfo import (
 """
 巨潮资讯-数据中心-专题统计-债券报表-债券发行
 """
-from akshare.bond.bond_issue_cninfo import (
+from aksharefix.bond.bond_issue_cninfo import (
     bond_treasure_issue_cninfo,
     bond_local_government_issue_cninfo,
     bond_corporate_issue_cninfo,
@@ -4032,24 +4032,24 @@ from akshare.bond.bond_issue_cninfo import (
 """
 巨潮资讯-数据中心-专题统计-公司治理-股权质押
 """
-from akshare.stock.stock_cg_equity_mortgage import (
+from aksharefix.stock.stock_cg_equity_mortgage import (
     stock_cg_equity_mortgage_cninfo,
 )
 
 """
 巨潮资讯-数据中心-专题统计-公司治理-公司诉讼
 """
-from akshare.stock.stock_cg_lawsuit import stock_cg_lawsuit_cninfo
+from aksharefix.stock.stock_cg_lawsuit import stock_cg_lawsuit_cninfo
 
 """
 巨潮资讯-数据中心-专题统计-公司治理-对外担保
 """
-from akshare.stock.stock_cg_guarantee import stock_cg_guarantee_cninfo
+from aksharefix.stock.stock_cg_guarantee import stock_cg_guarantee_cninfo
 
 """
 B 股
 """
-from akshare.stock.stock_zh_b_sina import (
+from aksharefix.stock.stock_zh_b_sina import (
     stock_zh_b_spot,
     stock_zh_b_daily,
     stock_zh_b_minute,
@@ -4058,13 +4058,13 @@ from akshare.stock.stock_zh_b_sina import (
 """
 期货手续费
 """
-from akshare.futures.futures_comm_qihuo import futures_comm_info
-from akshare.futures.futures_comm_ctp import futures_fees_info
+from aksharefix.futures.futures_comm_qihuo import futures_comm_info
+from aksharefix.futures.futures_comm_ctp import futures_fees_info
 
 """
 实际控制人持股变动
 """
-from akshare.stock.stock_hold_control_cninfo import (
+from aksharefix.stock.stock_hold_control_cninfo import (
     stock_hold_control_cninfo,
     stock_hold_management_detail_cninfo,
 )
@@ -4072,12 +4072,12 @@ from akshare.stock.stock_hold_control_cninfo import (
 """
 股东人数及持股集中度
 """
-from akshare.stock.stock_hold_num_cninfo import stock_hold_num_cninfo
+from aksharefix.stock.stock_hold_num_cninfo import stock_hold_num_cninfo
 
 """
 新股过会
 """
-from akshare.stock.stock_new_cninfo import (
+from aksharefix.stock.stock_new_cninfo import (
     stock_new_gh_cninfo,
     stock_new_ipo_cninfo,
 )
@@ -4085,17 +4085,17 @@ from akshare.stock.stock_new_cninfo import (
 """
 个股分红
 """
-from akshare.stock.stock_dividend_cninfo import stock_dividend_cninfo
+from aksharefix.stock.stock_dividend_cninfo import stock_dividend_cninfo
 
 """
 公司股本变动
 """
-from akshare.stock.stock_share_changes_cninfo import stock_share_change_cninfo
+from aksharefix.stock.stock_share_changes_cninfo import stock_share_change_cninfo
 
 """
 行业分类数据
 """
-from akshare.stock.stock_industry_cninfo import (
+from aksharefix.stock.stock_industry_cninfo import (
     stock_industry_category_cninfo,
     stock_industry_change_cninfo,
 )
@@ -4103,7 +4103,7 @@ from akshare.stock.stock_industry_cninfo import (
 """
 行业市盈率
 """
-from akshare.stock.stock_industry_pe_cninfo import (
+from aksharefix.stock.stock_industry_pe_cninfo import (
     stock_industry_pe_ratio_cninfo,
 )
 
@@ -4111,39 +4111,39 @@ from akshare.stock.stock_industry_pe_cninfo import (
 申万宏源行业分类数据
 """
 
-from akshare.stock.stock_industry_sw import stock_industry_clf_hist_sw
+from aksharefix.stock.stock_industry_sw import stock_industry_clf_hist_sw
 
 """
 投资评级
 """
-from akshare.stock.stock_rank_forecast import stock_rank_forecast_cninfo
+from aksharefix.stock.stock_rank_forecast import stock_rank_forecast_cninfo
 
 """
 美股-知名美股
 """
-from akshare.stock.stock_us_famous import stock_us_famous_spot_em
+from aksharefix.stock.stock_us_famous import stock_us_famous_spot_em
 
 """
 美股-粉单市场
 """
-from akshare.stock.stock_us_pink import stock_us_pink_spot_em
+from aksharefix.stock.stock_us_pink import stock_us_pink_spot_em
 
 """
 REITs
 """
-from akshare.reits.reits_basic import reits_realtime_em, reits_hist_em
+from aksharefix.reits.reits_basic import reits_realtime_em, reits_hist_em
 
 """
 全部 A 股-等权重市盈率、中位数市盈率
 全部 A 股-等权重、中位数市净率
 """
-from akshare.stock_feature.stock_ttm_lyr import stock_a_ttm_lyr
-from akshare.stock_feature.stock_all_pb import stock_a_all_pb
+from aksharefix.stock_feature.stock_ttm_lyr import stock_a_ttm_lyr
+from aksharefix.stock_feature.stock_all_pb import stock_a_all_pb
 
 """
 宏观-加拿大
 """
-from akshare.economic.macro_canada import (
+from aksharefix.economic.macro_canada import (
     macro_canada_cpi_monthly,
     macro_canada_core_cpi_monthly,
     macro_canada_bank_rate,
@@ -4159,7 +4159,7 @@ from akshare.economic.macro_canada import (
 """
 猪肉价格信息
 """
-from akshare.futures_derivative.futures_hog import (
+from aksharefix.futures_derivative.futures_hog import (
     futures_hog_core,
     futures_hog_cost,
     futures_hog_supply,
@@ -4168,7 +4168,7 @@ from akshare.futures_derivative.futures_hog import (
 """
 宏观-澳大利亚
 """
-from akshare.economic.macro_australia import (
+from aksharefix.economic.macro_australia import (
     macro_australia_bank_rate,
     macro_australia_unemployment_rate,
     macro_australia_trade,
@@ -4181,7 +4181,7 @@ from akshare.economic.macro_australia import (
 """
 融资融券-深圳
 """
-from akshare.stock_feature.stock_margin_szse import (
+from aksharefix.stock_feature.stock_margin_szse import (
     stock_margin_underlying_info_szse,
     stock_margin_detail_szse,
     stock_margin_szse,
@@ -4190,7 +4190,7 @@ from akshare.stock_feature.stock_margin_szse import (
 """
 英国-宏观
 """
-from akshare.economic.macro_uk import (
+from aksharefix.economic.macro_uk import (
     macro_uk_gdp_yearly,
     macro_uk_gdp_quarterly,
     macro_uk_retail_yearly,
@@ -4211,7 +4211,7 @@ from akshare.economic.macro_uk import (
 """
 日本-宏观
 """
-from akshare.economic.macro_japan import (
+from aksharefix.economic.macro_japan import (
     macro_japan_bank_rate,
     macro_japan_core_cpi_yearly,
     macro_japan_cpi_yearly,
@@ -4222,7 +4222,7 @@ from akshare.economic.macro_japan import (
 """
 瑞士-宏观
 """
-from akshare.economic.macro_swiss import (
+from aksharefix.economic.macro_swiss import (
     macro_swiss_trade,
     macro_swiss_svme,
     macro_swiss_cpi_yearly,
@@ -4234,7 +4234,7 @@ from akshare.economic.macro_swiss import (
 """
 东方财富-概念板块
 """
-from akshare.stock.stock_board_concept_em import (
+from aksharefix.stock.stock_board_concept_em import (
     stock_board_concept_cons_em,
     stock_board_concept_hist_em,
     stock_board_concept_hist_min_em,
@@ -4245,7 +4245,7 @@ from akshare.stock.stock_board_concept_em import (
 """
 德国-经济指标
 """
-from akshare.economic.macro_germany import (
+from aksharefix.economic.macro_germany import (
     macro_germany_gdp,
     macro_germany_ifo,
     macro_germany_cpi_monthly,
@@ -4259,7 +4259,7 @@ from akshare.economic.macro_germany import (
 """
 基金规模和规模趋势
 """
-from akshare.fund.fund_aum_em import (
+from aksharefix.fund.fund_aum_em import (
     fund_aum_em,
     fund_aum_trend_em,
     fund_aum_hist_em,
@@ -4268,12 +4268,12 @@ from akshare.fund.fund_aum_em import (
 """
 CME 比特币成交量
 """
-from akshare.crypto.crypto_bitcoin_cme import crypto_bitcoin_cme
+from aksharefix.crypto.crypto_bitcoin_cme import crypto_bitcoin_cme
 
 """
 盘口异动
 """
-from akshare.stock_feature.stock_pankou_em import (
+from aksharefix.stock_feature.stock_pankou_em import (
     stock_changes_em,
     stock_board_change_em,
 )
@@ -4281,7 +4281,7 @@ from akshare.stock_feature.stock_pankou_em import (
 """
 A 股东方财富
 """
-from akshare.stock_feature.stock_hist_em import (
+from aksharefix.stock_feature.stock_hist_em import (
     stock_zh_a_spot_em,
     stock_bj_a_spot_em,
     stock_new_a_spot_em,
@@ -4306,17 +4306,17 @@ from akshare.stock_feature.stock_hist_em import (
 """
 中行人民币牌价历史数据查询
 """
-from akshare.currency.currency_china_bank_sina import currency_boc_sina
+from aksharefix.currency.currency_china_bank_sina import currency_boc_sina
 
 """
 期货持仓
 """
-from akshare.futures_derivative.futures_cot_sina import futures_hold_pos_sina
+from aksharefix.futures_derivative.futures_cot_sina import futures_hold_pos_sina
 
 """
 股东户数
 """
-from akshare.stock_feature.stock_gdhs import (
+from aksharefix.stock_feature.stock_gdhs import (
     stock_zh_a_gdhs,
     stock_zh_a_gdhs_detail_em,
 )
@@ -4324,12 +4324,12 @@ from akshare.stock_feature.stock_gdhs import (
 """
 两网及退市
 """
-from akshare.stock.stock_stop import stock_staq_net_stop
+from aksharefix.stock.stock_stop import stock_staq_net_stop
 
 """
 涨停板行情
 """
-from akshare.stock_feature.stock_ztb_em import (
+from aksharefix.stock_feature.stock_ztb_em import (
     stock_zt_pool_em,
     stock_zt_pool_previous_em,
     stock_zt_pool_dtgc_em,
@@ -4341,7 +4341,7 @@ from akshare.stock_feature.stock_ztb_em import (
 """
 中国-香港-宏观
 """
-from akshare.economic.macro_china_hk import (
+from aksharefix.economic.macro_china_hk import (
     macro_china_hk_cpi,
     macro_china_hk_cpi_ratio,
     macro_china_hk_trade_diff_ratio,
@@ -4356,13 +4356,13 @@ from akshare.economic.macro_china_hk import (
 """
 增发和配股
 """
-from akshare.stock_feature.stock_zf_pg import stock_qbzf_em, stock_pg_em
+from aksharefix.stock_feature.stock_zf_pg import stock_qbzf_em, stock_pg_em
 
 """
 汽车销量
 """
-from akshare.other.other_car_gasgoo import car_sale_rank_gasgoo
-from akshare.other.other_car_cpca import (
+from aksharefix.other.other_car_gasgoo import car_sale_rank_gasgoo
+from aksharefix.other.other_car_cpca import (
     car_market_cate_cpca,
     car_market_fuel_cpca,
     car_market_segment_cpca,
@@ -4374,43 +4374,43 @@ from akshare.other.other_car_cpca import (
 """
 中国公路物流运价、运量指数
 """
-from akshare.index.index_cflp import index_price_cflp, index_volume_cflp
+from aksharefix.index.index_cflp import index_price_cflp, index_volume_cflp
 
 """
 赚钱效应分析
 """
-from akshare.stock_feature.stock_market_legu import stock_market_activity_legu
+from aksharefix.stock_feature.stock_market_legu import stock_market_activity_legu
 
 """
 浙江省排污权交易指数
 """
-from akshare.index.index_eri import index_eri
+from aksharefix.index.index_eri import index_eri
 
 """
 Drewry 集装箱指数
 """
-from akshare.index.index_drewry import drewry_wci_index
+from aksharefix.index.index_drewry import drewry_wci_index
 
 """
 柯桥指数
 """
-from akshare.index.index_kq_fz import index_kq_fz
-from akshare.index.index_kq_ss import index_kq_fashion
+from aksharefix.index.index_kq_fz import index_kq_fz
+from aksharefix.index.index_kq_ss import index_kq_fashion
 
 """
 新发基金
 """
-from akshare.fund.fund_init_em import fund_new_found_em
+from aksharefix.fund.fund_init_em import fund_new_found_em
 
 """
 高管持股
 """
-from akshare.stock_feature.stock_gdzjc_em import stock_ggcg_em
+from aksharefix.stock_feature.stock_gdzjc_em import stock_ggcg_em
 
 """
 同花顺-数据中心-资金流向-概念资金流
 """
-from akshare.stock_feature.stock_fund_flow import (
+from aksharefix.stock_feature.stock_fund_flow import (
     stock_fund_flow_concept,
     stock_fund_flow_industry,
     stock_fund_flow_big_deal,
@@ -4420,12 +4420,12 @@ from akshare.stock_feature.stock_fund_flow import (
 """
 比特币持仓
 """
-from akshare.crypto.crypto_hold import crypto_bitcoin_hold_report
+from aksharefix.crypto.crypto_hold import crypto_bitcoin_hold_report
 
 """
 证券交易营业部排行
 """
-from akshare.stock_feature.stock_lh_yybpm import (
+from aksharefix.stock_feature.stock_lh_yybpm import (
     stock_lh_yyb_capital,
     stock_lh_yyb_most,
     stock_lh_yyb_control,
@@ -4434,17 +4434,17 @@ from akshare.stock_feature.stock_lh_yybpm import (
 """
 沪深 A 股公告
 """
-from akshare.stock_fundamental.stock_notice import stock_notice_report
+from aksharefix.stock_fundamental.stock_notice import stock_notice_report
 
 """
 首发企业申报
 """
-from akshare.stock_fundamental.stock_ipo_declare import stock_ipo_declare
+from aksharefix.stock_fundamental.stock_ipo_declare import stock_ipo_declare
 
 """
 三大报表
 """
-from akshare.stock_feature.stock_report_em import (
+from aksharefix.stock_feature.stock_report_em import (
     stock_zcfz_em,
     stock_zcfz_bj_em,
     stock_lrb_em,
@@ -4454,12 +4454,12 @@ from akshare.stock_feature.stock_report_em import (
 """
 业绩报告
 """
-from akshare.stock_feature.stock_yjbb_em import stock_yjbb_em
+from aksharefix.stock_feature.stock_yjbb_em import stock_yjbb_em
 
 """
 同花顺-概念板块
 """
-from akshare.stock_feature.stock_board_concept_ths import (
+from aksharefix.stock_feature.stock_board_concept_ths import (
     stock_board_concept_info_ths,
     stock_board_concept_summary_ths,
     stock_board_concept_index_ths,
@@ -4469,7 +4469,7 @@ from akshare.stock_feature.stock_board_concept_ths import (
 """
 同花顺-行业板块
 """
-from akshare.stock_feature.stock_board_industry_ths import (
+from aksharefix.stock_feature.stock_board_industry_ths import (
     stock_board_industry_name_ths,
     stock_board_industry_info_ths,
     stock_board_industry_index_ths,
@@ -4480,29 +4480,29 @@ from akshare.stock_feature.stock_board_industry_ths import (
 """
 分红配送
 """
-from akshare.stock_feature.stock_fhps_em import stock_fhps_em, stock_fhps_detail_em
+from aksharefix.stock_feature.stock_fhps_em import stock_fhps_em, stock_fhps_detail_em
 
 """
 中美国债收益率
 """
-from akshare.bond.bond_em import bond_zh_us_rate
+from aksharefix.bond.bond_em import bond_zh_us_rate
 
 """
 盈利预测
 """
-from akshare.stock_fundamental.stock_profit_forecast_em import (
+from aksharefix.stock_fundamental.stock_profit_forecast_em import (
     stock_profit_forecast_em,
 )
 
 """
 基金经理
 """
-from akshare.fund.fund_manager import fund_manager_em
+from aksharefix.fund.fund_manager import fund_manager_em
 
 """
 基金评级
 """
-from akshare.fund.fund_rating import (
+from aksharefix.fund.fund_rating import (
     fund_rating_sh,
     fund_rating_zs,
     fund_rating_ja,
@@ -4512,7 +4512,7 @@ from akshare.fund.fund_rating import (
 """
 融资融券数据
 """
-from akshare.stock_feature.stock_margin_sse import (
+from aksharefix.stock_feature.stock_margin_sse import (
     stock_margin_detail_sse,
     stock_margin_sse,
     stock_margin_ratio_pa,
@@ -4521,7 +4521,7 @@ from akshare.stock_feature.stock_margin_sse import (
 """
 期货交割和期转现
 """
-from akshare.futures.futures_to_spot import (
+from aksharefix.futures.futures_to_spot import (
     futures_to_spot_czce,
     futures_to_spot_shfe,
     futures_to_spot_dce,
@@ -4535,7 +4535,7 @@ from akshare.futures.futures_to_spot import (
 """
 基金持仓
 """
-from akshare.fund.fund_portfolio_em import (
+from aksharefix.fund.fund_portfolio_em import (
     fund_portfolio_hold_em,
     fund_portfolio_change_em,
     fund_portfolio_bond_hold_em,
@@ -4545,7 +4545,7 @@ from akshare.fund.fund_portfolio_em import (
 """
 债券概览
 """
-from akshare.bond.bond_summary import (
+from aksharefix.bond.bond_summary import (
     bond_deal_summary_sse,
     bond_cash_summary_sse,
 )
@@ -4553,17 +4553,17 @@ from akshare.bond.bond_summary import (
 """
 新闻-个股新闻
 """
-from akshare.news.news_stock import stock_news_em
+from aksharefix.news.news_stock import stock_news_em
 
 """
 股票数据-一致行动人
 """
-from akshare.stock_feature.stock_yzxdr_em import stock_yzxdr_em
+from aksharefix.stock_feature.stock_yzxdr_em import stock_yzxdr_em
 
 """
 大宗交易
 """
-from akshare.stock.stock_dzjy_em import (
+from aksharefix.stock.stock_dzjy_em import (
     stock_dzjy_sctj,
     stock_dzjy_mrmx,
     stock_dzjy_mrtj,
@@ -4575,7 +4575,7 @@ from akshare.stock.stock_dzjy_em import (
 """
 国证指数
 """
-from akshare.index.index_cni import (
+from aksharefix.index.index_cni import (
     index_hist_cni,
     index_all_cni,
     index_detail_cni,
@@ -4586,42 +4586,42 @@ from akshare.index.index_cni import (
 """
 东方财富-期权
 """
-from akshare.option.option_em import option_current_em
+from aksharefix.option.option_em import option_current_em
 
 """
 科创板报告
 """
-from akshare.stock.stock_zh_kcb_report import stock_zh_kcb_report_em
+from aksharefix.stock.stock_zh_kcb_report import stock_zh_kcb_report_em
 
 """
 期货合约详情
 """
-from akshare.futures.futures_contract_detail import futures_contract_detail
+from aksharefix.futures.futures_contract_detail import futures_contract_detail
 
 """
 胡润排行榜
 """
-from akshare.fortune.fortune_hurun import hurun_rank
+from aksharefix.fortune.fortune_hurun import hurun_rank
 
 """
 新财富富豪榜
 """
-from akshare.fortune.fortune_xincaifu_500 import xincaifu_rank
+from aksharefix.fortune.fortune_xincaifu_500 import xincaifu_rank
 
 """
 福布斯中国榜单
 """
-from akshare.fortune.fortune_forbes_500 import forbes_rank
+from aksharefix.fortune.fortune_forbes_500 import forbes_rank
 
 """
 回购定盘利率
 """
-from akshare.rate.repo_rate import repo_rate_hist, repo_rate_query
+from aksharefix.rate.repo_rate import repo_rate_hist, repo_rate_query
 
 """
 公募基金排行
 """
-from akshare.fund.fund_rank_em import (
+from aksharefix.fund.fund_rank_em import (
     fund_exchange_rank_em,
     fund_money_rank_em,
     fund_open_fund_rank_em,
@@ -4632,7 +4632,7 @@ from akshare.fund.fund_rank_em import (
 """
 电影票房
 """
-from akshare.movie.movie_yien import (
+from aksharefix.movie.movie_yien import (
     movie_boxoffice_cinema_daily,
     movie_boxoffice_cinema_weekly,
     movie_boxoffice_weekly,
@@ -4646,12 +4646,12 @@ from akshare.movie.movie_yien import (
 """
 新闻联播文字稿
 """
-from akshare.news.news_cctv import news_cctv
+from aksharefix.news.news_cctv import news_cctv
 
 """
 债券收盘收益率曲线历史数据
 """
-from akshare.bond.bond_china_money import (
+from aksharefix.bond.bond_china_money import (
     bond_china_close_return,
     macro_china_bond_public,
     macro_china_swap_rate,
@@ -4662,12 +4662,12 @@ from akshare.bond.bond_china_money import (
 """
 COMEX黄金-白银库存
 """
-from akshare.futures.futures_comex_em import futures_comex_inventory
+from aksharefix.futures.futures_comex_em import futures_comex_inventory
 
 """
 A 股-特别标的
 """
-from akshare.stock.stock_zh_a_special import (
+from aksharefix.stock.stock_zh_a_special import (
     stock_zh_a_new,
     stock_zh_a_st_em,
     stock_zh_a_new_em,
@@ -4677,7 +4677,7 @@ from akshare.stock.stock_zh_a_special import (
 """
 东方财富-注册制审核
 """
-from akshare.stock_fundamental.stock_register_em import (
+from aksharefix.stock_fundamental.stock_register_em import (
     stock_register_kcb,
     stock_register_cyb,
     stock_register_bj,
@@ -4689,7 +4689,7 @@ from akshare.stock_fundamental.stock_register_em import (
 """
 新浪财经-龙虎榜
 """
-from akshare.stock_feature.stock_lhb_sina import (
+from aksharefix.stock_feature.stock_lhb_sina import (
     stock_lhb_detail_daily_sina,
     stock_lhb_ggtj_sina,
     stock_lhb_jgmx_sina,
@@ -4700,7 +4700,7 @@ from akshare.stock_feature.stock_lhb_sina import (
 """
 中证指数
 """
-from akshare.index.index_stock_zh_csindex import (
+from aksharefix.index.index_stock_zh_csindex import (
     stock_zh_index_hist_csindex,
     stock_zh_index_value_csindex,
 )
@@ -4708,7 +4708,7 @@ from akshare.index.index_stock_zh_csindex import (
 """
 股票基金持仓数据
 """
-from akshare.stock.stock_fund_hold import (
+from aksharefix.stock.stock_fund_hold import (
     stock_report_fund_hold,
     stock_report_fund_hold_detail,
 )
@@ -4716,7 +4716,7 @@ from akshare.stock.stock_fund_hold import (
 """
 期货分钟数据
 """
-from akshare.futures.futures_zh_sina import (
+from aksharefix.futures.futures_zh_sina import (
     futures_zh_minute_sina,
     futures_zh_daily_sina,
     futures_zh_realtime,
@@ -4728,12 +4728,12 @@ from akshare.futures.futures_zh_sina import (
 """
 股票财务报告预约披露
 """
-from akshare.stock_feature.stock_yjyg_cninfo import stock_report_disclosure
+from aksharefix.stock_feature.stock_yjyg_cninfo import stock_report_disclosure
 
 """
 基金行情
 """
-from akshare.fund.fund_etf_sina import (
+from aksharefix.fund.fund_etf_sina import (
     fund_etf_hist_sina,
     fund_etf_category_sina,
     fund_etf_dividend_sina,
@@ -4742,12 +4742,12 @@ from akshare.fund.fund_etf_sina import (
 """
 交易日历
 """
-from akshare.tool.trade_date_hist import tool_trade_date_hist_sina
+from aksharefix.tool.trade_date_hist import tool_trade_date_hist_sina
 
 """
 commodity option
 """
-from akshare.option.option_commodity_sina import (
+from aksharefix.option.option_commodity_sina import (
     option_commodity_contract_table_sina,
     option_commodity_contract_sina,
     option_commodity_hist_sina,
@@ -4756,25 +4756,25 @@ from akshare.option.option_commodity_sina import (
 """
 A 股PE和PB
 """
-from akshare.stock_feature.stock_a_pe_and_pb import (
+from aksharefix.stock_feature.stock_a_pe_and_pb import (
     stock_market_pb_lg,
     stock_index_pb_lg,
     stock_market_pe_lg,
     stock_index_pe_lg,
 )
-from akshare.stock_feature.stock_a_indicator import (
+from aksharefix.stock_feature.stock_a_indicator import (
     stock_a_indicator_lg,
     stock_hk_indicator_eniu,
 )
-from akshare.stock_feature.stock_a_high_low import stock_a_high_low_statistics
-from akshare.stock_feature.stock_a_below_net_asset_statistics import (
+from aksharefix.stock_feature.stock_a_high_low import stock_a_high_low_statistics
+from aksharefix.stock_feature.stock_a_below_net_asset_statistics import (
     stock_a_below_net_asset_statistics,
 )
 
 """
 彭博亿万富豪指数
 """
-from akshare.fortune.fortune_bloomberg import (
+from aksharefix.fortune.fortune_bloomberg import (
     index_bloomberg_billionaires,
     index_bloomberg_billionaires_hist,
 )
@@ -4782,12 +4782,12 @@ from akshare.fortune.fortune_bloomberg import (
 """
 stock-券商业绩月报
 """
-from akshare.stock_feature.stock_qsjy_em import stock_qsjy_em
+from aksharefix.stock_feature.stock_qsjy_em import stock_qsjy_em
 
 """
 futures-warehouse-receipt
 """
-from akshare.futures.futures_warehouse_receipt import (
+from aksharefix.futures.futures_warehouse_receipt import (
     futures_czce_warehouse_receipt,
     futures_dce_warehouse_receipt,
     futures_shfe_warehouse_receipt,
@@ -4797,12 +4797,12 @@ from akshare.futures.futures_warehouse_receipt import (
 """
 stock-js
 """
-from akshare.stock.stock_us_js import stock_price_js
+from aksharefix.stock.stock_us_js import stock_price_js
 
 """
 stock-summary
 """
-from akshare.stock.stock_summary import (
+from aksharefix.stock.stock_summary import (
     stock_sse_summary,
     stock_szse_summary,
     stock_sse_deal_daily,
@@ -4813,7 +4813,7 @@ from akshare.stock.stock_summary import (
 """
 股票-机构推荐池
 """
-from akshare.stock_fundamental.stock_recommend import (
+from aksharefix.stock_fundamental.stock_recommend import (
     stock_institute_recommend,
     stock_institute_recommend_detail,
 )
@@ -4821,7 +4821,7 @@ from akshare.stock_fundamental.stock_recommend import (
 """
 股票-机构持股
 """
-from akshare.stock_fundamental.stock_hold import (
+from aksharefix.stock_fundamental.stock_hold import (
     stock_institute_hold_detail,
     stock_institute_hold,
 )
@@ -4829,7 +4829,7 @@ from akshare.stock_fundamental.stock_hold import (
 """
 stock-info
 """
-from akshare.stock.stock_info import (
+from aksharefix.stock.stock_info import (
     stock_info_sh_delist,
     stock_info_sz_delist,
     stock_info_a_code_name,
@@ -4843,12 +4843,12 @@ from akshare.stock.stock_info import (
 """
 stock-sector
 """
-from akshare.stock.stock_industry import stock_sector_spot, stock_sector_detail
+from aksharefix.stock.stock_industry import stock_sector_spot, stock_sector_detail
 
 """
 stock-fundamental
 """
-from akshare.stock_fundamental.stock_finance_sina import (
+from aksharefix.stock_fundamental.stock_finance_sina import (
     stock_financial_abstract,
     stock_financial_report_sina,
     stock_financial_analysis_indicator,
@@ -4865,7 +4865,7 @@ from akshare.stock_fundamental.stock_finance_sina import (
 """
 stock-HK-fundamental
 """
-from akshare.stock_fundamental.stock_finance_hk_em import (
+from aksharefix.stock_fundamental.stock_finance_hk_em import (
     stock_financial_hk_analysis_indicator_em,
     stock_financial_hk_report_em,
 )
@@ -4873,7 +4873,7 @@ from akshare.stock_fundamental.stock_finance_hk_em import (
 """
 stock_fund
 """
-from akshare.stock.stock_fund_em import (
+from aksharefix.stock.stock_fund_em import (
     stock_individual_fund_flow,
     stock_market_fund_flow,
     stock_sector_fund_flow_rank,
@@ -4887,7 +4887,7 @@ from akshare.stock.stock_fund_em import (
 """
 air-quality
 """
-from akshare.air.air_zhenqi import (
+from aksharefix.air.air_zhenqi import (
     air_quality_hist,
     air_quality_rank,
     air_quality_watch_point,
@@ -4897,12 +4897,12 @@ from akshare.air.air_zhenqi import (
 """
 hf
 """
-from akshare.hf.hf_sp500 import hf_sp_500
+from aksharefix.hf.hf_sp500 import hf_sp_500
 
 """
 stock_yjyg_em
 """
-from akshare.stock_feature.stock_yjyg_em import (
+from aksharefix.stock_feature.stock_yjyg_em import (
     stock_yjyg_em,
     stock_yysj_em,
     stock_yjkb_em,
@@ -4911,7 +4911,7 @@ from akshare.stock_feature.stock_yjyg_em import (
 """
 stock
 """
-from akshare.stock_feature.stock_dxsyl_em import (
+from aksharefix.stock_feature.stock_dxsyl_em import (
     stock_dxsyl_em,
     stock_xgsglb_em,
 )
@@ -4919,12 +4919,12 @@ from akshare.stock_feature.stock_dxsyl_em import (
 """
 article
 """
-from akshare.article.fred_md import fred_md, fred_qd
+from aksharefix.article.fred_md import fred_md, fred_qd
 
 """
 中证商品指数
 """
-from akshare.futures.futures_index_ccidx import (
+from aksharefix.futures.futures_index_ccidx import (
     futures_index_min_ccidx,
     futures_index_ccidx,
 )
@@ -4932,17 +4932,17 @@ from akshare.futures.futures_index_ccidx import (
 """
 futures_em_spot_stock
 """
-from akshare.futures.futures_spot_stock_em import futures_spot_stock
+from aksharefix.futures.futures_spot_stock_em import futures_spot_stock
 
 """
 energy_oil
 """
-from akshare.energy.energy_oil_em import energy_oil_detail, energy_oil_hist
+from aksharefix.energy.energy_oil_em import energy_oil_detail, energy_oil_hist
 
 """
 futures-foreign
 """
-from akshare.futures.futures_foreign import (
+from aksharefix.futures.futures_foreign import (
     futures_foreign_detail,
     futures_foreign_hist,
 )
@@ -4950,12 +4950,12 @@ from akshare.futures.futures_foreign import (
 """
 stock-em-tfp
 """
-from akshare.stock_feature.stock_tfp_em import stock_tfp_em
+from aksharefix.stock_feature.stock_tfp_em import stock_tfp_em
 
 """
 stock-em-hsgt
 """
-from akshare.stock_feature.stock_hsgt_em import (
+from aksharefix.stock_feature.stock_hsgt_em import (
     stock_hk_ggt_components_em,
     stock_hsgt_hold_stock_em,
     stock_hsgt_hist_em,
@@ -4967,7 +4967,7 @@ from akshare.stock_feature.stock_hsgt_em import (
 """
 stock-em-comment
 """
-from akshare.stock_feature.stock_comment_em import (
+from aksharefix.stock_feature.stock_comment_em import (
     stock_comment_em,
     stock_comment_detail_zlkp_jgcyd_em,
     stock_comment_detail_scrd_focus_em,
@@ -4979,7 +4979,7 @@ from akshare.stock_feature.stock_comment_em import (
 """
 stock-em-analyst
 """
-from akshare.stock_feature.stock_analyst_em import (
+from aksharefix.stock_feature.stock_analyst_em import (
     stock_analyst_detail_em,
     stock_analyst_rank_em,
 )
@@ -4987,12 +4987,12 @@ from akshare.stock_feature.stock_analyst_em import (
 """
 新加坡期货交易所
 """
-from akshare.futures.futures_settlement_price_sgx import futures_settlement_price_sgx
+from aksharefix.futures.futures_settlement_price_sgx import futures_settlement_price_sgx
 
 """
 currency interface
 """
-from akshare.currency.currency import (
+from aksharefix.currency.currency import (
     currency_convert,
     currency_currencies,
     currency_history,
@@ -5003,12 +5003,12 @@ from akshare.currency.currency import (
 """
 知识图谱
 """
-from akshare.nlp.nlp_interface import nlp_ownthink, nlp_answer
+from aksharefix.nlp.nlp_interface import nlp_ownthink, nlp_answer
 
 """
 微博舆情报告
 """
-from akshare.stock.stock_weibo_nlp import (
+from aksharefix.stock.stock_weibo_nlp import (
     stock_js_weibo_nlp_time,
     stock_js_weibo_report,
 )
@@ -5016,7 +5016,7 @@ from akshare.stock.stock_weibo_nlp import (
 """
 金融期权-新浪
 """
-from akshare.option.option_finance_sina import (
+from aksharefix.option.option_finance_sina import (
     option_cffex_sz50_list_sina,
     option_cffex_sz50_spot_sina,
     option_cffex_sz50_daily_sina,
@@ -5041,8 +5041,8 @@ from akshare.option.option_finance_sina import (
 """
 债券-沪深债券
 """
-from akshare.bond.bond_zh_sina import bond_zh_hs_daily, bond_zh_hs_spot
-from akshare.bond.bond_zh_cov import (
+from aksharefix.bond.bond_zh_sina import bond_zh_hs_daily, bond_zh_hs_spot
+from aksharefix.bond.bond_zh_cov import (
     bond_zh_hs_cov_daily,
     bond_zh_hs_cov_spot,
     bond_cov_comparison,
@@ -5052,7 +5052,7 @@ from akshare.bond.bond_zh_cov import (
     bond_zh_hs_cov_pre_min,
     bond_zh_cov_value_analysis,
 )
-from akshare.bond.bond_convert import (
+from aksharefix.bond.bond_convert import (
     bond_cb_jsl,
     bond_cb_adj_logs_jsl,
     bond_cb_index_jsl,
@@ -5062,7 +5062,7 @@ from akshare.bond.bond_convert import (
 """
 基金数据接口
 """
-from akshare.fund.fund_em import (
+from aksharefix.fund.fund_em import (
     fund_open_fund_daily_em,
     fund_open_fund_info_em,
     fund_etf_fund_daily_em,
@@ -5083,7 +5083,7 @@ from akshare.fund.fund_em import (
 """
 百度迁徙地图接口
 """
-from akshare.event.migration import (
+from aksharefix.event.migration import (
     migration_area_baidu,
     migration_scale_baidu,
 )
@@ -5091,29 +5091,29 @@ from akshare.event.migration import (
 """
 英为财情-外汇-货币对历史数据
 """
-from akshare.fx.currency_investing import (
+from aksharefix.fx.currency_investing import (
     currency_pair_map,
 )
 
 """
 商品期权-郑州商品交易所-期权-历史数据
 """
-from akshare.option.option_czce import option_czce_hist
+from aksharefix.option.option_czce import option_czce_hist
 
 """
 宏观-经济数据-银行间拆借利率
 """
-from akshare.interest_rate.interbank_rate_em import rate_interbank
+from aksharefix.interest_rate.interbank_rate_em import rate_interbank
 
 """
 金十数据中心-外汇情绪
 """
-from akshare.economic.macro_other import macro_fx_sentiment
+from aksharefix.economic.macro_other import macro_fx_sentiment
 
 """
 金十数据中心-经济指标-欧元区
 """
-from akshare.economic.macro_euro import (
+from aksharefix.economic.macro_euro import (
     macro_euro_gdp_yoy,
     macro_euro_cpi_mom,
     macro_euro_cpi_yoy,
@@ -5135,7 +5135,7 @@ from akshare.economic.macro_euro import (
 """
 金十数据中心-经济指标-央行利率-主要央行利率
 """
-from akshare.economic.macro_bank import (
+from aksharefix.economic.macro_bank import (
     macro_bank_australia_interest_rate,
     macro_bank_brazil_interest_rate,
     macro_bank_brazil_interest_rate,
@@ -5153,18 +5153,18 @@ from akshare.economic.macro_bank import (
 """
 义乌小商品指数
 """
-from akshare.index.index_yw import index_yw
+from aksharefix.index.index_yw import index_yw
 
 """
 
 股票指数-股票指数-中证指数列表
 """
-from akshare.index.index_csindex import index_csindex_all
+from aksharefix.index.index_csindex import index_csindex_all
 """
 
 股票指数-股票指数-成份股
 """
-from akshare.index.index_cons import (
+from aksharefix.index.index_cons import (
     index_stock_info,
     index_stock_cons,
     index_stock_cons_sina,
@@ -5176,17 +5176,17 @@ from akshare.index.index_cons import (
 """
 东方财富-股票账户
 """
-from akshare.stock_feature.stock_account_em import stock_account_statistics_em
+from aksharefix.stock_feature.stock_account_em import stock_account_statistics_em
 
 """
 期货规则
 """
-from akshare.futures.futures_rule import futures_rule
+from aksharefix.futures.futures_rule import futures_rule
 
 """
 东方财富-商誉专题
 """
-from akshare.stock_feature.stock_sy_em import (
+from aksharefix.stock_feature.stock_sy_em import (
     stock_sy_profile_em,
     stock_sy_yq_em,
     stock_sy_jz_em,
@@ -5197,7 +5197,7 @@ from akshare.stock_feature.stock_sy_em import (
 """
 东方财富-股票质押
 """
-from akshare.stock_feature.stock_gpzy_em import (
+from aksharefix.stock_feature.stock_gpzy_em import (
     stock_gpzy_pledge_ratio_em,
     stock_gpzy_profile_em,
     stock_gpzy_distribute_statistics_bank_em,
@@ -5209,7 +5209,7 @@ from akshare.stock_feature.stock_gpzy_em import (
 """
 东方财富-机构调研
 """
-from akshare.stock_feature.stock_jgdy_em import (
+from aksharefix.stock_feature.stock_jgdy_em import (
     stock_jgdy_tj_em,
     stock_jgdy_detail_em,
 )
@@ -5217,7 +5217,7 @@ from akshare.stock_feature.stock_jgdy_em import (
 """
 新浪主力连续接口
 """
-from akshare.futures_derivative.futures_index_sina import (
+from aksharefix.futures_derivative.futures_index_sina import (
     futures_main_sina,
     futures_display_main_sina,
 )
@@ -5225,22 +5225,22 @@ from akshare.futures_derivative.futures_index_sina import (
 """
 中国宏观杠杆率数据
 """
-from akshare.economic.marco_cnbs import macro_cnbs
+from aksharefix.economic.marco_cnbs import macro_cnbs
 
 """
 大宗商品-现货价格指数
 """
-from akshare.index.index_spot import spot_goods
+from aksharefix.index.index_spot import spot_goods
 
 """
 成本-世界各大城市生活成本
 """
-from akshare.cost.cost_living import cost_living
+from aksharefix.cost.cost_living import cost_living
 
 """
 能源-碳排放权
 """
-from akshare.energy.energy_carbon import (
+from aksharefix.energy.energy_carbon import (
     energy_carbon_domestic,
     energy_carbon_bj,
     energy_carbon_eu,
@@ -5252,7 +5252,7 @@ from akshare.energy.energy_carbon import (
 """
 中国证券投资基金业协会-信息公示
 """
-from akshare.fund.fund_amac import (
+from aksharefix.fund.fund_amac import (
     amac_manager_info,
     amac_member_info,
     amac_member_sub_info,
@@ -5272,7 +5272,7 @@ from akshare.fund.fund_amac import (
 """
 申万行业一级
 """
-from akshare.index.index_sw import (
+from aksharefix.index.index_sw import (
     sw_index_third_cons,
     sw_index_first_info,
     sw_index_second_info,
@@ -5282,29 +5282,29 @@ from akshare.index.index_sw import (
 """
 经济政策不确定性指数
 """
-from akshare.article.epu_index import article_epu_index
+from aksharefix.article.epu_index import article_epu_index
 
 """
 空气-河北
 """
-from akshare.air.air_hebei import air_quality_hebei
+from aksharefix.air.air_hebei import air_quality_hebei
 
 """
 日出和日落
 """
-from akshare.air.sunrise_tad import sunrise_daily, sunrise_monthly
+from aksharefix.air.sunrise_tad import sunrise_daily, sunrise_monthly
 
 """
 新浪-指数实时行情和历史行情
 """
-from akshare.stock.stock_zh_a_tick_tx import (
+from aksharefix.stock.stock_zh_a_tick_tx import (
     stock_zh_a_tick_tx_js,
 )
 
 """
 新浪-指数实时行情和历史行情
 """
-from akshare.index.index_stock_zh import (
+from aksharefix.index.index_stock_zh import (
     stock_zh_index_daily,
     stock_zh_index_spot_sina,
     stock_zh_index_spot_em,
@@ -5315,7 +5315,7 @@ from akshare.index.index_stock_zh import (
 """
 外盘期货实时行情
 """
-from akshare.futures.futures_hq_sina import (
+from aksharefix.futures.futures_hq_sina import (
     futures_foreign_commodity_realtime,
     futures_foreign_commodity_subscribe_exchange_symbol,
     futures_hq_subscribe_exchange_symbol,
@@ -5324,12 +5324,12 @@ from akshare.futures.futures_hq_sina import (
 """
 FF多因子数据接口
 """
-from akshare.article.ff_factor import article_ff_crr
+from aksharefix.article.ff_factor import article_ff_crr
 
 """
 Realized Library 接口
 """
-from akshare.article.risk_rv import (
+from aksharefix.article.risk_rv import (
     article_oman_rv,
     article_oman_rv_short,
     article_rlab_rv,
@@ -5338,12 +5338,12 @@ from akshare.article.risk_rv import (
 """
 银保监分局本级行政处罚数据
 """
-from akshare.bank.bank_cbirc_2020 import bank_fjcf_table_detail
+from aksharefix.bank.bank_cbirc_2020 import bank_fjcf_table_detail
 
 """
 科创板股票
 """
-from akshare.stock.stock_zh_kcb_sina import (
+from aksharefix.stock.stock_zh_kcb_sina import (
     stock_zh_kcb_spot,
     stock_zh_kcb_daily,
 )
@@ -5351,7 +5351,7 @@ from akshare.stock.stock_zh_kcb_sina import (
 """
 A股
 """
-from akshare.stock.stock_zh_a_sina import (
+from aksharefix.stock.stock_zh_a_sina import (
     stock_zh_a_spot,
     stock_zh_a_daily,
     stock_zh_a_minute,
@@ -5362,7 +5362,7 @@ from akshare.stock.stock_zh_a_sina import (
 """
 A+H股
 """
-from akshare.stock.stock_zh_ah_tx import (
+from aksharefix.stock.stock_zh_ah_tx import (
     stock_zh_ah_spot,
     stock_zh_ah_daily,
     stock_zh_ah_name,
@@ -5371,12 +5371,12 @@ from akshare.stock.stock_zh_ah_tx import (
 """
 加密货币
 """
-from akshare.economic.macro_other import crypto_js_spot
+from aksharefix.economic.macro_other import crypto_js_spot
 
 """
 金融期权
 """
-from akshare.option.option_finance import (
+from aksharefix.option.option_finance import (
     option_finance_board,
     option_finance_sse_underlying,
 )
@@ -5384,7 +5384,7 @@ from akshare.option.option_finance import (
 """
 新浪-美股实时行情数据和历史行情数据(前复权)
 """
-from akshare.stock.stock_us_sina import (
+from aksharefix.stock.stock_us_sina import (
     stock_us_daily,
     stock_us_spot,
     get_us_stock_name,
@@ -5393,17 +5393,17 @@ from akshare.stock.stock_us_sina import (
 """
 新浪-港股实时行情数据和历史数据(前复权和后复权因子)
 """
-from akshare.stock.stock_hk_sina import stock_hk_daily, stock_hk_spot
+from aksharefix.stock.stock_hk_sina import stock_hk_daily, stock_hk_spot
 
 """
 生意社-商品与期货-现期图数据
 """
-from akshare.futures_derivative.futures_spot_sys import futures_spot_sys
+from aksharefix.futures_derivative.futures_spot_sys import futures_spot_sys
 
 """
 全球宏观-机构宏观
 """
-from akshare.economic.macro_constitute import (
+from aksharefix.economic.macro_constitute import (
     macro_cons_gold,
     macro_cons_silver,
     macro_cons_opec_month,
@@ -5412,7 +5412,7 @@ from akshare.economic.macro_constitute import (
 """
 全球宏观-美国宏观
 """
-from akshare.economic.macro_usa import (
+from aksharefix.economic.macro_usa import (
     macro_usa_eia_crude_rate,
     macro_usa_non_farm,
     macro_usa_unemployment_rate,
@@ -5467,7 +5467,7 @@ from akshare.economic.macro_usa import (
 """
 全球宏观-中国宏观
 """
-from akshare.economic.macro_china import (
+from aksharefix.economic.macro_china import (
     macro_china_bank_financing,
     macro_china_insurance_income,
     macro_china_mobile_number,
@@ -5550,7 +5550,7 @@ from akshare.economic.macro_china import (
 """
 全球宏观-中国宏观-国家统计局
 """
-from akshare.economic.macro_china_nbs import (
+from aksharefix.economic.macro_china_nbs import (
     macro_china_nbs_nation,
     macro_china_nbs_region
 )
@@ -5558,12 +5558,12 @@ from akshare.economic.macro_china_nbs import (
 """
 外汇
 """
-from akshare.fx.fx_quote import fx_pair_quote, fx_spot_quote, fx_swap_quote
+from aksharefix.fx.fx_quote import fx_pair_quote, fx_spot_quote, fx_swap_quote
 
 """
 债券行情
 """
-from akshare.bond.bond_china import (
+from aksharefix.bond.bond_china import (
     bond_spot_quote,
     bond_spot_deal,
     bond_china_yield,
@@ -5572,7 +5572,7 @@ from akshare.bond.bond_china import (
 """
 商品期权
 """
-from akshare.option.option_commodity import (
+from aksharefix.option.option_commodity import (
     option_dce_daily,
     option_czce_daily,
     option_shfe_daily,
@@ -5583,27 +5583,27 @@ from akshare.option.option_commodity import (
 """
 99期货-期货库存数据
 """
-from akshare.futures.futures_inventory_99 import futures_inventory_99
+from aksharefix.futures.futures_inventory_99 import futures_inventory_99
 
 """
 东方财富-期货库存数据
 """
-from akshare.futures.futures_inventory_em import futures_inventory_em
+from aksharefix.futures.futures_inventory_em import futures_inventory_em
 
 """
 中国银行间市场交易商协会
 """
-from akshare.bond.bond_nafmii import bond_debt_nafmii
+from aksharefix.bond.bond_nafmii import bond_debt_nafmii
 
 """
 奇货可查-工具模块
 """
-from akshare.qhkc_web.qhkc_tool import qhkc_tool_foreign, qhkc_tool_gdp
+from aksharefix.qhkc_web.qhkc_tool import qhkc_tool_foreign, qhkc_tool_gdp
 
 """
 奇货可查-指数模块
 """
-from akshare.qhkc_web.qhkc_index import (
+from aksharefix.qhkc_web.qhkc_index import (
     get_qhkc_index,
     get_qhkc_index_trend,
     get_qhkc_index_profit_loss,
@@ -5612,7 +5612,7 @@ from akshare.qhkc_web.qhkc_index import (
 """
 奇货可查-资金模块
 """
-from akshare.qhkc_web.qhkc_fund import (
+from aksharefix.qhkc_web.qhkc_fund import (
     get_qhkc_fund_money_change,
     get_qhkc_fund_bs,
     get_qhkc_fund_position,
@@ -5621,7 +5621,7 @@ from akshare.qhkc_web.qhkc_fund import (
 """
 大宗商品现货价格及基差
 """
-from akshare.futures.futures_basis import (
+from aksharefix.futures.futures_basis import (
     futures_spot_price_daily,
     futures_spot_price,
     futures_spot_price_previous,
@@ -5630,7 +5630,7 @@ from akshare.futures.futures_basis import (
 """
 期货持仓成交排名数据
 """
-from akshare.futures.cot import (
+from aksharefix.futures.cot import (
     get_rank_sum_daily,
     get_rank_sum,
     get_shfe_rank_table,
@@ -5645,12 +5645,12 @@ from akshare.futures.cot import (
 """
 大宗商品期货仓单数据
 """
-from akshare.futures.receipt import get_receipt
+from aksharefix.futures.receipt import get_receipt
 
 """
 大宗商品期货展期收益率数据
 """
-from akshare.futures.futures_roll_yield import (
+from aksharefix.futures.futures_roll_yield import (
     get_roll_yield_bar,
     get_roll_yield,
 )
@@ -5658,7 +5658,7 @@ from akshare.futures.futures_roll_yield import (
 """
 交易所日线行情数据
 """
-from akshare.futures.futures_daily_bar import (
+from aksharefix.futures.futures_daily_bar import (
     get_cffex_daily,
     get_czce_daily,
     get_shfe_daily,
@@ -5671,7 +5671,7 @@ from akshare.futures.futures_daily_bar import (
 """
 雪球基金数据
 """
-from akshare.fund.fund_xq import (
+from aksharefix.fund.fund_xq import (
     fund_individual_basic_info_xq,
     fund_individual_achievement_xq,
     fund_individual_analysis_xq,
@@ -5695,8 +5695,8 @@ from .exceptions import (
 """
 Pro API 设置
 """
-from akshare.pro.data_pro import pro_api
-from akshare.utils.token_process import set_token, get_token
+from aksharefix.pro.data_pro import pro_api
+from aksharefix.utils.token_process import set_token, get_token
 
 """
 AKQMT 设置
