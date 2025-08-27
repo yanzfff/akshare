@@ -13,7 +13,7 @@ import pandas as pd
 import py_mini_racer
 import requests
 
-from akshare.stock.cons import (
+from aksharefix.stock.cons import (
     zh_sina_a_stock_payload,
     zh_sina_a_stock_url,
     zh_sina_a_stock_count_url,
@@ -23,8 +23,8 @@ from akshare.stock.cons import (
     zh_sina_a_stock_qfq_url,
     zh_sina_a_stock_amount_url,
 )
-from akshare.utils import demjson
-from akshare.utils.tqdm import get_tqdm
+from aksharefix.utils import demjson
+from aksharefix.utils.tqdm import get_tqdm
 
 
 def _get_zh_a_page_count() -> int:
@@ -40,100 +40,6 @@ def _get_zh_a_page_count() -> int:
         return page_count
     else:
         return int(page_count) + 1
-
-def stock_zh_a_spot_stream(onErr):
-    """
-    新浪财经-所有 A 股的实时行情数据生成器; 支持逐页迭代处理，避免内存占用过大
-    https://vip.stock.finance.sina.com.cn/mkt/#hs_a
-    :return: 生成器，每次返回一页股票的实时行情数据
-    :rtype: Generator[pandas.DataFrame]
-    """
-    page_count = _get_zh_a_page_count()
-    zh_sina_stock_payload_copy = zh_sina_a_stock_payload.copy()
-    tqdm = get_tqdm()
-    
-    for page in tqdm(
-        range(1, page_count + 1), leave=False, desc="Please wait for a moment"
-    ):
-        zh_sina_stock_payload_copy.update({"page": page})
-        errCount = 0
-        while True:
-            try:
-                r = requests.get(zh_sina_a_stock_url, params=zh_sina_stock_payload_copy)
-                if not r.text.startswith("{"):
-                    raise Exception("not json")
-                data_json = demjson.decode(r.text)
-                break
-            except Exception as e:
-                errCount = errCount + 1
-                onErr(e, errCount)
-                continue
-        page_df = pd.DataFrame(data_json)
-        
-        if not page_df.empty:
-            page_df = page_df.astype(
-                {
-                    "trade": "float",
-                    "pricechange": "float",
-                    "changepercent": "float",
-                    "buy": "float",
-                    "sell": "float",
-                    "settlement": "float",
-                    "open": "float",
-                    "high": "float",
-                    "low": "float",
-                    "volume": "float",
-                    "amount": "float",
-                    "per": "float",
-                    "pb": "float",
-                    "mktcap": "float",
-                    "nmc": "float",
-                    "turnoverratio": "float",
-                }
-            )
-            page_df.columns = [
-                "代码",
-                "_",
-                "名称",
-                "最新价",
-                "涨跌额",
-                "涨跌幅",
-                "买入",
-                "卖出",
-                "昨收",
-                "今开",
-                "最高",
-                "最低",
-                "成交量",
-                "成交额",
-                "时间戳",
-                "_",
-                "_",
-                "_",
-                "_",
-                "_",
-            ]
-            page_df = page_df[
-                [
-                    "代码",
-                    "名称",
-                    "最新价",
-                    "涨跌额",
-                    "涨跌幅",
-                    "买入",
-                    "卖出",
-                    "昨收",
-                    "今开",
-                    "最高",
-                    "最低",
-                    "成交量",
-                    "成交额",
-                    "时间戳",
-                ]
-            ]
-        
-        yield page_df
-
 
 def stock_zh_a_spot() -> pd.DataFrame:
     """
@@ -214,6 +120,180 @@ def stock_zh_a_spot() -> pd.DataFrame:
             "时间戳",
         ]
     ]
+    return big_df
+
+
+def stock_zh_a_spot_threaded(
+    thread_count: int = 4,
+    get_proxy_func=None
+) -> pd.DataFrame:
+    """
+    新浪财经-所有 A 股的实时行情数据 - 多线程版本
+    https://vip.stock.finance.sina.com.cn/mkt/#hs_a
+    :param thread_count: 线程数量
+    :type thread_count: int
+    :param get_proxy_func: 获取代理的函数，当请求失败时调用
+    :type get_proxy_func: callable
+    :return: 所有股票的实时行情数据
+    :rtype: pandas.DataFrame
+    """
+    import threading
+    import queue
+    import time
+    
+    page_count = _get_zh_a_page_count()
+    result_queue = queue.Queue()
+    page_queue = queue.Queue()
+    
+    # 将页码放入队列
+    for page in range(1, page_count + 1):
+        page_queue.put(page)
+    
+    def worker():
+        """工作线程函数"""
+        while True:
+            try:
+                page = page_queue.get(timeout=1)
+            except queue.Empty:
+                break
+                
+            max_retries = 3
+            retry_count = 0
+            
+            while retry_count < max_retries:
+                try:
+                    zh_sina_stock_payload_copy = zh_sina_a_stock_payload.copy()
+                    zh_sina_stock_payload_copy.update({"page": page})
+                    
+                    # 设置代理
+                    proxies = None
+                    if get_proxy_func:
+                        proxy = get_proxy_func()
+                        if proxy:
+                            proxies = {"http": proxy, "https": proxy}
+                    
+                    # 发送请求
+                    r = requests.get(
+                        zh_sina_a_stock_url, 
+                        params=zh_sina_stock_payload_copy,
+                        proxies=proxies,
+                        timeout=10
+                    )
+                    
+                    # 解析数据
+                    data_json = demjson.decode(r.text)
+                    
+                    # 检查数据是否有效
+                    if not isinstance(data_json, list) or len(data_json) == 0:
+                        raise ValueError("Invalid data format")
+                    
+                    page_df = pd.DataFrame(data_json)
+                    
+                    # 数据类型转换
+                    page_df = page_df.astype(
+                        {
+                            "trade": "float",
+                            "pricechange": "float",
+                            "changepercent": "float",
+                            "buy": "float",
+                            "sell": "float",
+                            "settlement": "float",
+                            "open": "float",
+                            "high": "float",
+                            "low": "float",
+                            "volume": "float",
+                            "amount": "float",
+                            "per": "float",
+                            "pb": "float",
+                            "mktcap": "float",
+                            "nmc": "float",
+                            "turnoverratio": "float",
+                        }
+                    )
+                    
+                    page_df.columns = [
+                        "代码",
+                        "_",
+                        "名称",
+                        "最新价",
+                        "涨跌额",
+                        "涨跌幅",
+                        "买入",
+                        "卖出",
+                        "昨收",
+                        "今开",
+                        "最高",
+                        "最低",
+                        "成交量",
+                        "成交额",
+                        "时间戳",
+                        "_",
+                        "_",
+                        "_",
+                        "_",
+                        "_",
+                    ]
+                    
+                    page_df = page_df[
+                        [
+                            "代码",
+                            "名称",
+                            "最新价",
+                            "涨跌额",
+                            "涨跌幅",
+                            "买入",
+                            "卖出",
+                            "昨收",
+                            "今开",
+                            "最高",
+                            "最低",
+                            "成交量",
+                            "成交额",
+                            "时间戳",
+                        ]
+                    ]
+                    
+                    # 将结果放入队列
+                    result_queue.put((page, page_df))
+                    break
+                    
+                except Exception as e:
+                    retry_count += 1
+                    if retry_count >= max_retries:
+                        print(f"Failed to fetch page {page} after {max_retries} retries: {e}")
+                        result_queue.put((page, pd.DataFrame()))
+                    else:
+                        time.sleep(1)  # 重试前等待
+                        # 如果有代理函数，刷新代理
+                        if get_proxy_func:
+                            get_proxy_func()
+            
+            page_queue.task_done()
+    
+    # 创建并启动线程
+    threads = []
+    for _ in range(min(thread_count, page_count)):
+        t = threading.Thread(target=worker)
+        t.start()
+        threads.append(t)
+    
+    # 等待所有线程完成
+    for t in threads:
+        t.join()
+    
+    # 收集结果
+    results = []
+    while not result_queue.empty():
+        page, page_df = result_queue.get()
+        if not page_df.empty:
+            results.append((page, page_df))
+    
+    # 按页码排序并合并数据
+    results.sort(key=lambda x: x[0])
+    big_df = pd.DataFrame()
+    for _, page_df in results:
+        big_df = pd.concat(objs=[big_df, page_df], ignore_index=True)
+    
     return big_df
 
 

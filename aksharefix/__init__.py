@@ -3149,7 +3149,7 @@ amac_manager_cancelled_info # 中国证券投资基金业协会-信息公示-诚
 1.17.40 fix: fix stock_gdfx_free_holding_change_em interface
 """
 
-__version__ = "2.0.2"
+__version__ = "2.0.3"
 __author__ = "AKFamily"
 
 import sys
@@ -5356,7 +5356,7 @@ from aksharefix.stock.stock_zh_a_sina import (
     stock_zh_a_daily,
     stock_zh_a_minute,
     stock_zh_a_cdr_daily,
-    stock_zh_a_spot_stream,
+    stock_zh_a_spot_threaded,
 )
 
 """
