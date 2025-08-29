@@ -151,6 +151,7 @@ def stock_zh_a_spot_threaded(
     
     def worker():
         """工作线程函数"""
+        proxies = get_proxy_func()
         while True:
             try:
                 page = page_queue.get(timeout=1)
@@ -165,23 +166,28 @@ def stock_zh_a_spot_threaded(
                     zh_sina_stock_payload_copy = zh_sina_a_stock_payload.copy()
                     zh_sina_stock_payload_copy.update({"page": page})
                     
-                    # 设置代理
-                    proxies = None
-                    if get_proxy_func:
-                        proxy = get_proxy_func()
-                        if proxy:
-                            proxies = {"http": proxy, "https": proxy}
-                    
                     # 发送请求
-                    r = requests.get(
-                        zh_sina_a_stock_url, 
-                        params=zh_sina_stock_payload_copy,
-                        proxies=proxies,
-                        timeout=10
-                    )
-                    
-                    # 解析数据
-                    data_json = demjson.decode(r.text)
+                    try:
+                        r = requests.get(
+                            zh_sina_a_stock_url, 
+                            params=zh_sina_stock_payload_copy,
+                            proxies=proxies,
+                            timeout=10
+                        )
+
+                        data_json = demjson.decode(r.text)
+                    except requests.exceptions.Timeout:
+                        # 请求超时，重新获取代理
+                        proxies = get_proxy_func()
+                        raise
+                    except requests.exceptions.RequestException:
+                        # 其他请求异常，重新获取代理
+                        proxies = get_proxy_func()
+                        raise
+                    except (demjson.JSONDecodeError, ValueError):
+                        # JSON解析失败，重新获取代理
+                        proxies = get_proxy_func()
+                        raise
                     
                     # 检查数据是否有效
                     if not isinstance(data_json, list) or len(data_json) == 0:
@@ -262,11 +268,6 @@ def stock_zh_a_spot_threaded(
                     if retry_count >= max_retries:
                         print(f"Failed to fetch page {page} after {max_retries} retries: {e}")
                         result_queue.put((page, pd.DataFrame()))
-                    else:
-                        time.sleep(1)  # 重试前等待
-                        # 如果有代理函数，刷新代理
-                        if get_proxy_func:
-                            get_proxy_func()
             
             page_queue.task_done()
     
