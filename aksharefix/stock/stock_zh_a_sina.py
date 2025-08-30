@@ -158,7 +158,7 @@ def stock_zh_a_spot_threaded(
             except queue.Empty:
                 break
                 
-            max_retries = 3
+            max_retries = 5
             retry_count = 0
             
             while retry_count < max_retries:
@@ -178,14 +178,17 @@ def stock_zh_a_spot_threaded(
                         data_json = demjson.decode(r.text)
                     except requests.exceptions.Timeout:
                         # 请求超时，重新获取代理
+                        print(f"Request timeout for page {page}, retrying...")
                         proxies = get_proxy_func()
                         raise
                     except requests.exceptions.RequestException:
                         # 其他请求异常，重新获取代理
+                        print(f"Request exception for page {page}, retrying...")
                         proxies = get_proxy_func()
                         raise
                     except (demjson.JSONDecodeError, ValueError):
                         # JSON解析失败，重新获取代理
+                        print(f"JSON decode error for page {page}, retrying...")
                         proxies = get_proxy_func()
                         raise
                     
